@@ -1,0 +1,36 @@
+<!--Crie um arquivo index.html e um script.js. No HTML, inclua um título e uma lista não ordenada vazia (<ul>) com o ID dados-api. No JavaScript, use o fetch() para buscar dados de um ponto de teste (ex: https://jsonplaceholder.typicode.com/users) e, em seguida, crie uma função que use Manipulação do DOM para exibir na lista (<ul>) apenas o name e o email dos três primeiros usuários retornados.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="nome"></p>
+    <p id="email"></p>
+    
+    <script>
+         
+
+         let nome = document.getElementById("nome")
+         let email = document.getElementById("email")
+
+         fetch ("https://jsonplaceholder.typicode.com/users")
+            .then (resposta => resposta.json())
+            .then (dados =>
+                {nome.textContent = dados[0].name
+                email.textContent = dados[0].email}
+            )
+
+
+        
+
+
+
+
+    </script>
+
+</body>
+</html>
